@@ -75,8 +75,8 @@
 
     OneDriveFS.prototype.resume = function(successCallback, errorCallback) {
         if (!this.onedrive_client_) {
-            chrome.storage.local.get("accessToken", function(items) {
-                var accessToken = items.accessToken;
+            chrome.storage.local.get("access_token", function(items) {
+                var accessToken = items.access_token;
                 if (accessToken) {
                     this.onedrive_client_ = new OneDriveClient(this);
                     this.onedrive_client_.setAccessToken(accessToken);
